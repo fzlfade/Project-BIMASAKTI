@@ -1,0 +1,9 @@
+.bg-gradient {
+    background-image: linear-gradient(to right, #ff0000, #07c369); /* Gradient from light gray to light gray */
+}
+.main-navbar {
+    /* Styles specific to the element with ID "main-navbar" */
+    padding: 1rem 2rem; /* Add some padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+  
