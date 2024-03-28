@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="Food-Waste-Project/resources/css/navbar-menu.css"> <script src="navbar.js"></script> 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg" style="background-color: #f7d900;">
+<nav class="navbar navbar-expand-lg" style="background-color: #ffae00;" >
     <div class="container-fluid justify-content-between">
       <div class="d-flex">
         <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
@@ -33,7 +33,7 @@
               alt="Black and White Portrait of a Man"
               loading="lazy"
             />
-            <strong class="d-none d-sm-block ms-1">John</strong>
+            <div class="font-medium text-base text-gray-800"></div>
           </a>
         </li>
         <style>
@@ -62,11 +62,17 @@
             <span><i class="fa-solid fa-clock-rotate-left"></i></span>
           </a>
         </li>
-        <li class="nav-item me-3 me-lg-1">
-          <a class="nav-link d-flex justify-content-center align-items-center" href="#">
-            <span><i class="fas fa-sign-out-alt"></i></span>
-          </a>
-        </li>
+            <div>
+                <form method ="POST" action="/logout">
+                    @csrf
+                  <li class="nav-item me-3 me-lg-1">
+                    <a class="nav-link d-flex justify-content-center align-items-center" href="route('logout')" 
+                      onclick="event.preventDefault();this.closest('form').submit();">
+                      <span><i class="fas fa-sign-out-alt"></i></span>
+                    </a>
+                  </li>
+                </form>
+          </div>
       </ul>
     </div>
   </nav>

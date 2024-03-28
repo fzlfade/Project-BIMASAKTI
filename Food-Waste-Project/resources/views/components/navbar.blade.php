@@ -13,7 +13,6 @@
         padding: 0.5rem 1rem;
       }
     }
-    
   </style>
 </head>
 <body>
@@ -47,12 +46,12 @@
               <a class="nav-link" href="">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Contact</a>
+              <a class="nav-link" href="registerseller">Contact</a>
             </li>
           </ul>
           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-            <a href="/login" class="text-dark text-decoration-none px-4 py-1 rounded-4" style="background-color: white">Login</a>
-            <a href="/register" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: black">Register</a>
+            <a href="/loginpage" class="text-dark text-decoration-none px-4 py-1 rounded-4" style="background-color: white">Login</a>
+            <a href="/registerpage" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: black">Register</a>
           </div>
         </div>
       </div>
