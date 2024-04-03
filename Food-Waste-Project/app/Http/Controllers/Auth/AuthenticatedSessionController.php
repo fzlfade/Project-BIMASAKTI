@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         }
         
         if (Auth::user()->hasRole('buyer')) {
-            return redirect()->to(('daftar-toko'));
+            return redirect()->to(('dashboard'));
         }
 
         if (Auth::user()->hasRole('seller')) {

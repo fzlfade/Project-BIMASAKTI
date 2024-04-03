@@ -1,3 +1,6 @@
+@extends('components.layout')
+@section('content')
+<x-navbar></x-navbar>
 <x-guest-layout>
 
     {{-- <form method= "POST" action="/login" class="hidden">
@@ -99,3 +102,4 @@
     
         
 </x-guest-layout>
+@endsection

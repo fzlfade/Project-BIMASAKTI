@@ -20,6 +20,7 @@ class produk extends Model
         'nama_produk',
         'foto_produk',
         'detail_produk',
+        'harga_produk'
     ];
 
     /**

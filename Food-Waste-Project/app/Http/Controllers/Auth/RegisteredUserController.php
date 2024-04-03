@@ -41,11 +41,11 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $user->assignRole('buyer');
-
         event(new Registered($user));
 
         Auth::login($user);
+
+        $user->assignRole('buyer');
 
         return redirect(route('dashboard', absolute: false));
     }

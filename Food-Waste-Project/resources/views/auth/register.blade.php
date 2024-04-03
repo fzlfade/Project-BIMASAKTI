@@ -1,3 +1,6 @@
+@extends('components.layout')
+@section('content')
+<x-navbar></x-navbar>
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -50,3 +53,4 @@
         </div>
     </form>
 </x-guest-layout>
+@endsection

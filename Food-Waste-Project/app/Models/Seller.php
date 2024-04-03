@@ -20,6 +20,7 @@ class Seller extends Model
         'nama_toko',
         'foto_profil_toko',
         'alamat_toko',
+        'harga_produk'
     ];
 
     /**

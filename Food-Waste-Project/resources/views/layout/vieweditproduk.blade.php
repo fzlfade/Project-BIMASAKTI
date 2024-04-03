@@ -14,12 +14,12 @@
 
   <div class="container-fluid">
     <div class="px-lg-5">
-      <div class="py-5 text-right"><a href="tambahproduk" class="btn btn-dark px-5 py-3 text-uppercase">Tambah Produk</a></div>
+      <div class="py-5 text-right">
+        <a href="tambahproduk" class="btn btn-dark px-5 py-3 text-uppercase">Tambah Produk</a>
+      </div>
     </div>
-    
       @yield('produk')
-    
-</div>
+  </div>
 
 
 </body>

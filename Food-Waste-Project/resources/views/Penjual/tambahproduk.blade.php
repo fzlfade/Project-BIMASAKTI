@@ -19,26 +19,36 @@
                     <div class="p-3 py-5">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="text-right">Tambah Produk Toko</h4>
-
                         </div>
+
                         <div class="row mt-2">
                             <div class="col-md-12">
                                 <label class="labels">Nama Produk</label>
-                                <input type="text" class="form-control" name="nama_produk"  value="" >
+                                <input type="text" class="form-control" name="nama_produk" >
                             </div>
                         </div>
-                        <div class="row mt-4">
+
+                        <div class="row mt-2">
+                            <div class="col-md-12">
+                                <label class="labels">Harga Produk</label>
+                                <input type="text" class="form-control" name="harga_produk" >
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
                             <div class="col-md-12">
                                 <label class="labels">Deskripsi Produk</label>
-                                <input type="text" class="form-control" name="detail_produk"  value="">
+                                <input type="text" class="form-control" name="detail_produk" >
                             </div>
                         </div>
+
                         <div class="col-md-15">
                             <label class="form-label">Foto Produk</label>
                             <input type="file" class="form-control" name="foto_produk">
                             <small class="text-muted">Ukuran gambar : maks. 1 MB. Format gambar: JPEG, PNG</small>
                         </div>
-                        <div class="mt-md-1 text-center"><button class="btn btn-primary profile-button" type="submit" >Save Profile</button></div>
+
+                        <div class="mt-md-1 text-center"><button class="btn btn-primary profile-button" type="submit" >Save Produk</button></div>
                     </div>
                 </div>
             </form>

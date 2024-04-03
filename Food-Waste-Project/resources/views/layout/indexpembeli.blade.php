@@ -1,8 +1,31 @@
+<!DOCTYPE html>
+<html>
 
-@extends('layout.vieweditproduk')
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVFQWjT+T0qfrbM+BzxQvThuokKF/+DSuIcOPu/dTPy7yGtT++WLv" crossorigin="anonymous"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" link rel=https://cdn.lineicons.com/4.0/lineicons.css rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <x-navbar-profile>
 
-@section('produk')
-    <style>
+        </x-navbar-profile>
+        <style>
+            body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+            "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: rgb(22, 20, 24);
+            color: #eee;
+            user-select: none;
+            }
+
+            code {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+                monospace;
+            }
+
             .nft{
             user-select:none;
             max-width: 300px;
@@ -128,47 +151,11 @@
             }
             }
         </style>
-        @foreach($data as $e)
-        <!-- <div class="row">
-            <td>
-                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                    <div class="bg-white rounded shadow-sm">
-                        <img src="{{ url('foto').'/'.$e->foto_produk }}" alt="" class="img-fluid card-img-top">
-                        <div class="p-4">
-                            <h5> <a href="#" class="text-dark">{{$e->nama_produk}}</a></h5>
-                            <p class="small text-muted mb-0">{{$e->harga_produk}}</p>
-                            <p class="small text-muted mb-0">{{$e->detail_produk}}</p>
-                            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                <div class="btn-group">
-                                    <a href='{{url('/editproduk/'.$e->id)}}'>
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
-                                    </a>
-                                    <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </div> -->
-        <div class="nft">
-        <div class="col-auto">
-            <div class='main'>
-                <img class='tokenImage' src="{{ url('foto').'/'.$e->foto_produk }}" alt="NFT" />
-                <h2>{{$e->nama_produk}}</h2>
-                <p class='description'>{{$e->detail_produk}}</p>
-                <div class='tokenInfo'>
-                    <div class="price">
-                    <p>Rp. {{$e->harga_produk}}</p>  
-                    </div>
-                    <a href={{ url('/viewproduk/'.$e->id) }}>
-                        <button type="button" class="btn btn-primary" >Pesan Sekarang
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-        @endforeach
+    </head>
 
-@endsection
+    <body class="row row-cols">
+    @yield('menu')
+      
+    </body>
+
+</html>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PenjualController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\RegisterPenjual;
+use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\produkController;
 use App\Http\Controllers\SellerprofileController;
 
@@ -19,6 +20,8 @@ Route::get('/', function () {
 // Route::get('/tokoedit',[SellerprofileController::class, 'index']);
 // Route::post('/penjual/tokoedit', [SellerprofileController::class, 'edit']);
 
+
+// BUYER PRODUK
 Route::controller(produkController::class)->group(function () {
     Route::get('editproduk','vieweditproduk')->name('vieweditproduk');
     Route::get('tambahproduk','viewtambahproduk')->name('viewtambahproduk');
@@ -27,7 +30,12 @@ Route::controller(produkController::class)->group(function () {
     Route::put('editproduk/{id}','editproduks')->name('editproduks');
 });
 
+// BUYER VIEW PRODUK
+Route::controller(produkController::class)->group(function () {
+    Route::get('viewproduk','viewproduk')->name('viewproduk');
+    Route::get('viewproduk/{id}','viewdetailproduk')->name('viewdetailproduk');
 
+})->middleware([ 'auth','verified', 'role:buyer|admin']);
 
 Route::controller(PenjualController::class)->group(function () {
     Route::get('profiltoko', 'profiltoko')->name('penjual.profil');
@@ -51,9 +59,11 @@ Route::get('upload-menu', function () {
 
 // TOKO EDIT PRODUK
 
+
+
 Route::get('daftar-produk', function () {
-    return view('Penjual/daftar-produk');
-})->middleware([ 'auth','verified', 'role:seller|admin']);
+    return view('layout/indexpembeli');
+})->middleware([ 'auth','verified', 'role:buyer|admin']);
 
 // Route::controller(ProductController::class)->group(function() {
 //    Route::get('','')->name('product-edit'); 
