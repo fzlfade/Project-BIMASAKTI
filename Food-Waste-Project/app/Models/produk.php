@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Traits\HasRoles;
 
-class Seller extends Model
+class produk extends Model
 {
     use HasFactory,HasRoles;
 
@@ -16,10 +16,10 @@ class Seller extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
-        'nama_toko',
-        'foto_profil_toko',
-        'alamat_toko',
+        'seller_id',
+        'nama_produk',
+        'foto_produk',
+        'detail_produk',
     ];
 
     /**
@@ -27,6 +27,6 @@ class Seller extends Model
      *
      * @var string
      */
-    protected $table = 'sellerprofiles';
+    protected $table = 'tabelproduk';
 
 }

@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
         }
 
         if (Auth::user()->hasRole('seller')) {
-            return redirect()->to(('profile-toko'));
+            return redirect()->to(('tokoedit'));
         }
 
         return redirect()->intended(route('dashboard', absolute: false));

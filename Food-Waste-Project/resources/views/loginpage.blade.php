@@ -1,3 +1,5 @@
+@extends('components.layout')
+@section('content')
 <x-navbar></x-navbar>
 <x-guest-layout>
     <!-- Session Status -->
@@ -44,3 +46,4 @@
         </div>
     </form>
 </x-guest-layout>
+@endsection

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Navbar</title>
+  @vite(['resources/css/app.scss', 'resources/js/app.js'])
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVFQWjT+T0qfrbM+BzxQvThuokKF/+DSuIcOPu/dTPy7yGtT++WLv" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="Food-Waste-Project/resources/css/navbar-menu.css"> <script src="navbar.js"></script> 
@@ -12,7 +12,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #ffae00;" >
     <div class="container-fluid justify-content-between">
       <div class="d-flex">
-        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="tokoedit">
           <img
             src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
             height="20"
@@ -46,6 +46,15 @@
             align-items: center; /* Centers content vertically within anchor tag */
           }
         </style>
+          <div>{{ Auth::user()->name }}</div>
+
+          <div class="ms-1">
+              <svg class="fill-current h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </div>
+      
+
         <li class="nav-item me-3 me-lg-1">
           <a class="nav-link d-flex justify-content-center align-items-center" href="#">
         <li class="nav-item me-3 me-lg-1">

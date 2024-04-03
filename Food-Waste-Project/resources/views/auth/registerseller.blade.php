@@ -1,10 +1,56 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('registerseller') }}">
+
+    {{-- <form method= "POST" action="/login" class="hidden">
         @csrf
+        <!-- Nama Toko -->
+        <div>
+            <x-input-label for="nama_toko" :value="__('Nama Toko')" />
+            <x-text-input id="nama_toko" class="block mt-1 w-full" type="text" name="nama_toko" :value="old('nama_toko')" required autofocus autocomplete="nama_toko" />
+            <x-input-error :messages="$errors->get('na  me')" class="mt-2" />
+        </div>
+        <!-- Foto  Profil Toko -->
+        <div>
+            <label for="foto_profil_toko" class="form-label">Gambar</label>
+            <input type="file" class="form-control" name="foto_profil_toko">
+            <small class="text-muted">Ukuran gambar: maks. 1 MB. Format gambar: JPEG, PNG</small>
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        </div>
+
+        <!-- Alamat -->
+        <div>
+            <x-input-label for="Alamat Toko" :value="__('Alamat Toko')" />
+            <x-text-input id="alamat_toko" class="block mt-1 w-full" type="text" name="alamat_toko" :value="old('alamat_toko')" required autofocus autocomplete="alamat_toko" />
+            <x-input-error :messages="$errors->get('alamat_toko')" class="mt-2" />
+        </div>
+    </form> --}}
+
+    <form method="POST" action="{{ route('registerseller') }}"  enctype="multipart/form-data">
+        @csrf
+        
+         <!-- Nama Toko -->
+         <div>
+            <x-input-label for="nama_toko" :value="__('Nama Toko')" />
+            <x-text-input id="nama_toko" class="block mt-1 w-full" type="text" name="nama_toko" :value="old('nama_toko')" required autofocus autocomplete="nama_toko" />
+            <x-input-error :messages="$errors->get('na  me')" class="mt-2" />
+        </div>
+        <!-- Foto  Profil Toko -->
+        <div>
+            <label for="foto_profil_toko" class="form-label">Gambar</label>
+            <input type="file" class="form-control" name="foto_profil_toko">
+            <small class="text-muted">Ukuran gambar: maks. 1 MB. Format gambar: JPEG, PNG</small>
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        </div>
+
+        <!-- Alamat -->
+        <div>
+            <x-input-label for="Alamat Toko" :value="__('Alamat Toko')" />
+            <x-text-input id="alamat_toko" class="block mt-1 w-full" type="text" name="alamat_toko" :value="old('alamat_toko')" required autofocus autocomplete="alamat_toko" />
+            <x-input-error :messages="$errors->get('alamat_toko')" class="mt-2" />
+        </div>
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('Nama Pemilik Usaha')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -49,4 +95,7 @@
             </x-primary-button>
         </div>
     </form>
+
+    
+        
 </x-guest-layout>

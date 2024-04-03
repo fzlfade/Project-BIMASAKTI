@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Mockery\Generator\StringManipulation\Pass\Pass;
 
+
 class UserSeeder extends Seeder
 {
     /**
@@ -17,7 +18,7 @@ class UserSeeder extends Seeder
          $admin = User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => bcrypt('1234578')
+            'password' => bcrypt('12345678')
          ]);
             $admin->assignRole('admin');
 
@@ -25,7 +26,7 @@ class UserSeeder extends Seeder
             $buyer = User::create([
                 'name' => 'buyer',
                 'email' => 'buyer@gmail.com',
-                'password' => bcrypt('1234578')
+                'password' => bcrypt('12345678')
             ]);
 
             $buyer->assignRole('buyer');
@@ -33,7 +34,7 @@ class UserSeeder extends Seeder
             $seller = User::create([
                 'name' => 'seller',
                 'email' => 'seller@gmail.com',
-                'password' => bcrypt('1234578')
+                'password' => bcrypt('12345678')
             ]);
             
             $seller->assignRole('seller');

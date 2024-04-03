@@ -14,12 +14,13 @@ return new class extends Migration
     {
         
         Schema::create('sellerprofiles', function (Blueprint $table) {
-            $table->id();
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nama_toko');
             $table->string('foto_profil_toko');
             $table->string('alamat_toko');
+            $table->timestamps();
 
         });
     }

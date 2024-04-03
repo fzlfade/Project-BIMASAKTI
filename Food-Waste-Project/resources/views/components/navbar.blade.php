@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVFQWjT+T0qfrbM+BzxQvThuokKF/+DSuIcOPu/dTPy7yGtT++WLv" crossorigin="anonymous"></script>
-  <style>
+<style>
     /* Optional: Adjust navbar padding for different screen sizes */
     @media (min-width: 768px) {
       .navbar {
@@ -13,9 +6,8 @@
         padding: 0.5rem 1rem;
       }
     }
-  </style>
-</head>
-<body>
+</style>
+
 <nav class="navbar navbar-expand-lg" style="background-color: #ffae00;">
     <div class="container">
       <a class="navbar-brand" href="#">Food Waste</a>
@@ -51,10 +43,11 @@
           </ul>
           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
             <a href="/loginpage" class="text-dark text-decoration-none px-4 py-1 rounded-4" style="background-color: white">Login</a>
-            <a href="/registerpage" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: black">Register</a>
+            <a href="/register" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: black">Register</a>
           </div>
         </div>
       </div>
     </div>
   </nav>
 </body>
+
