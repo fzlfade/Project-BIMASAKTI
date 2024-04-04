@@ -5,7 +5,7 @@
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tambah Produk</title>
 </head>
 <body>
     <x-navbar-profile>
@@ -31,7 +31,7 @@
                         <div class="row mt-2">
                             <div class="col-md-12">
                                 <label class="labels">Harga Produk</label>
-                                <input type="text" class="form-control" name="harga_produk" >
+                                <input type="number" class="form-control" name="harga_produk" >
                             </div>
                         </div>
 

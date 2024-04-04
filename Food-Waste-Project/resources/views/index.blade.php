@@ -72,7 +72,7 @@
         <div class="row justify-content-center info-text">
           <div class="col-lg text-center">
             <h5>Sunny Ye</h5>
-            <p>Photographer</p>
+            <p>Youtuber</p>
           </div>
         </div>
       </section>

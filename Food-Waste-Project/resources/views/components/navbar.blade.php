@@ -10,7 +10,7 @@
 
 <nav class="navbar navbar-expand-lg" style="background-color: #ffae00;">
     <div class="container">
-      <a class="navbar-brand" href="#">Food Waste</a>
+      <a class="navbar-brand" href="/">Food Waste</a>
       
       <button 
         class="navbar-toggler shadow-none border-0" 

@@ -54,7 +54,7 @@
               </svg>
           </div>
       
-
+        
         <li class="nav-item me-3 me-lg-1">
           <a class="nav-link d-flex justify-content-center align-items-center" href="#">
         <li class="nav-item me-3 me-lg-1">
@@ -62,8 +62,8 @@
           </a>
         </li>
         <li class="nav-item me-3 me-lg-1">
-          <a class="nav-link d-flex justify-content-center align-items-center" href="#">
-            <span><i class="fa-solid fa-cart-shopping"></i></span>
+          <a class="nav-link d-flex justify-content-center align-items-center" href="/chatify">
+            <span><i class="bi bi-chat"></i></span>
           </a>
         </li>
         <li class="nav-item me-3 me-lg-1">

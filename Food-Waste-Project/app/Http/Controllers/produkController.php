@@ -17,7 +17,7 @@ class produkController extends Controller
     public function vieweditproduk(): View
     {
         $id = Auth::user()->id;
-        $data = produk::where('seller_id',$id)->paginate(3);
+        $data = produk::where('seller_id',$id)->paginate(4);
         return view ('Penjual/produk')->with('data',$data);
     }
 
@@ -82,7 +82,7 @@ class produkController extends Controller
             'foto_produk' => 'image|mimes:jpeg,jpg,png|max:2048',
             'nama_produk'=> 'required | string |max:100',
             'detail_produk'=> 'required | string |max:100',
-            'harga_produk'=> 'required|integer|max:100'
+            'harga_produk'=> 'required|integer',
          ]);
 
          $foto_file = $request->file('foto_produk');
@@ -99,12 +99,12 @@ class produkController extends Controller
 
          ]);        
          return redirect()->route('tambahproduk')->with(['success' => 'Data Berhasil Diubah!']);
-
+// 
     }
     
     public function viewproduk(): View
     {
-        $data = DB::table('tabelproduk')->paginate(4);
+        $data = DB::table('tabelproduk')->paginate(10);
         return view ('Pembeli/produkbeli')->with('data',$data);
 
     }
