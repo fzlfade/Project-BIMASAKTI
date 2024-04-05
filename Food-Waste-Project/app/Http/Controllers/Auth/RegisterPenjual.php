@@ -36,7 +36,7 @@ class RegisterPenjual extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'nama_toko' => ['required' ,'string' ,'max:100'],
             'foto_profil_toko' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'], // max 2MB
-            'alamat_toko'=> ['required' ,'string' ,'max:100'],
+            'alamat_toko'=> ['required' ,'string' ,'max:100'],    
         ]);
 
         $user = User::create([

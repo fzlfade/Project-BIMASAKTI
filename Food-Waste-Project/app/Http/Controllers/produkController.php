@@ -10,6 +10,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class produkController extends Controller
 {
@@ -33,7 +35,7 @@ class produkController extends Controller
             'foto_produk' => 'image|mimes:jpeg,jpg,png|max:2048',
             'nama_produk'=> 'required | string |max:100',
             'detail_produk'=> 'required | string |max:100',
-            'harga_produk' => 'required | decimal:2 | max 100'
+            'harga_produk'=> 'required|integer',
          ]);
 
         $data = produk::where('id',$id)->first();
@@ -41,6 +43,11 @@ class produkController extends Controller
         if ($request->hasFile('foto_produk')) {
 
             //upload new image
+            // $foto_file = $request->file('foto_produk');
+            // if (File::exists($foto_file)){
+            //     File::delete($foto_file);
+            // }
+
             $foto_file = $request->file('foto_produk');
             $foto_ekstensi = $foto_file->extension();
             $foto_nama = date('ymdhis') . '.' . $foto_ekstensi;
@@ -49,6 +56,8 @@ class produkController extends Controller
             //delete old image
             // $oldimage = $data->foto_profil_toko;
             // $oldimage->delete();
+            // $data_foto = produk::where('id', $id)->first();
+            File::delete(public_path('foto') . '/' . $data->foto_produk);
    
             //update product with new image
             $data->update([
@@ -63,12 +72,18 @@ class produkController extends Controller
             $data->update([
             'nama_produk'          => $request->nama_produk,
             'detail_produk'        => $request->detail_produk,
-            'harga_produk'   => $request->harga_produk,
+            'harga_produk'         => $request->harga_produk,
          ]);}
 
          return redirect()->route('vieweditproduk')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    
+
+    public function deleteproduk(Request $request, $id)
+    {
+        produk::where('id',$id)->delete();
+        return redirect()->route('vieweditproduk')->with('success', 'Berhasil hapus data');
+    }
+
     public function viewtambahproduk(): View
     {
         return view ('Penjual/tambahproduk');
@@ -98,7 +113,7 @@ class produkController extends Controller
             'harga_produk'=> $request->harga_produk
 
          ]);        
-         return redirect()->route('tambahproduk')->with(['success' => 'Data Berhasil Diubah!']);
+         return redirect()->route('vieweditproduk')->with(['success' => 'Data Berhasil Diubah!']);
 // 
     }
     

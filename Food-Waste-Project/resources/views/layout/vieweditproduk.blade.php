@@ -8,7 +8,7 @@
   <title>Produk</title>
 </head>
 
-<body style="background-color:#f884;">
+<body>
   <x-navbar-profile>
 
   </x-navbar-profile>

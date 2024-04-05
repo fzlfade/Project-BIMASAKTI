@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Pembeli extends Model
 {
     use HasFactory;
+    /**
+     * Fields that are mass assignable
+     *
+     * @var array
+     */
 }

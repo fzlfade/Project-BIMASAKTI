@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PenjualController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\RegisterPenjual;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\produkController;
 use App\Http\Controllers\SellerprofileController;
@@ -14,11 +15,37 @@ Route::get('/', function () {
     return view('index');
 });
 
+// STATUS ORDER
+Route::controller(OrderController::class)->group(function () {
+    Route::get('buyerstatus/{id}','buyerstatus')->name('view');
+    Route::post('buyerstatus/{id}','buyerstatus');
+
+    
+    Route::get('listriwayatpesanan','vieworder')->name('listriwayatpesanan');
+    
+
+    Route::get('riwayatpesananbuyer','buyervieworder')->name('buyervieworder');
+    Route::get('riwayatpesananseller','sellervieworder')->name('sellervieworder');
+
+    Route::put('riwayatpesananseller/{id}','sellerstatusterima')->name('sellerstatusterima');
+    Route::put('riwayatpesanansellertolak/{id}','sellerstatustolak')->name('sellerstatustolak');
+
+    // Route::put('riwayatpesananseller','sellerstatustolak')->name('sellerstatustolak');
+});
+    
+
 // Route Penjual
 
 // TOKO EDIT PROFILE 
 // Route::get('/tokoedit',[SellerprofileController::class, 'index']);
 // Route::post('/penjual/tokoedit', [SellerprofileController::class, 'edit']);
+
+Route::get('riwayatpesanan',function(){
+    return view('table-riwayat-pesanan');
+});
+
+
+
 
 
 // BUYER PRODUK
@@ -26,8 +53,12 @@ Route::controller(produkController::class)->group(function () {
     Route::get('editproduk','vieweditproduk')->name('vieweditproduk');
     Route::get('tambahproduk','viewtambahproduk')->name('viewtambahproduk');
     Route::post('tambahproduk', 'tambahproduk')->name('tambahproduk');
+
     Route::get('editproduk/{id}','editproduk')->name('editproduk');
-    Route::put('editproduk/{id}','editproduks')->name('editproduks');
+    Route::put('editproduk/{id}','editproduks');
+
+    Route::get('deleteproduk/{id}','deleteproduk')->name('deleteproduk');
+    Route::delete('deleteproduk/{id}','deleteproduk')->name('deleteproduks');
 });
 
 // BUYER VIEW PRODUK
@@ -115,6 +146,7 @@ Route::get('menu-detail',function () {
 
 Route::get('cart',function () {
     return view ('/Pembeli/cart');
+
 })->middleware([ 'auth','verified', 'role:buyer|admin']);
 
 Route::get('profilepage',function () {

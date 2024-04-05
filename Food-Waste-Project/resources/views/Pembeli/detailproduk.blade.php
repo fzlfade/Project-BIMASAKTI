@@ -1,30 +1,14 @@
 @extends('layout.indexpembeli')
 @section('menu')
     
+<title>{{$dataproduk->nama_produk}}</title>
+<body>
 
-<style>
-  .container {
-  display: flex;
-  align-items: center;
-  justify-content: center
-}
-
-img {
-  max-width: 100%;
-  max-height:100%;
-}
-
-.text {
-  font-size: 20px;
-  padding-left: 20px;
-}
-  </style>
-  <body>
-    <div class="container">
-      <div class="image">
+    {{-- <div class="container">
+    <div class="image">
         <img src="{{ url('foto').'/'.$dataproduk->foto_produk }}">
-      </div>
-      <div class="text">
+    </div>
+    <div class="text">
         <h1>{{$dataproduk->nama_produk}}</h1>
         <h2 {{$dataproduk->detail_produk}}</h2>
                 <div>
@@ -34,9 +18,34 @@ img {
                     <div class="price">
                         <p>Nama Toko:{{$dataseller->nama_toko}}</p>  
                     </div>
-      </div>
     </div>
-  </body>
+    </div>
+    </div> --}}
+    
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">{{$dataproduk->nama_produk}}</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ url('foto').'/'.$dataproduk->foto_produk }}" class="img-fluid mb-3" alt="Product Image" height="500">
+                <p>Price: Rp. {{$dataproduk->harga_produk}}</p>
+                <p>Nama Toko:{{$dataseller->nama_toko}}</p>
+                <p>Alamat Toko:{{$dataseller->alamat_toko}}</p>
+            </div>
+            <div class="col-md-8">
+                <h3>Product Description</h3>
+                <p>{{$dataproduk->detail_produk}}</p>
+                <h3>Delivery Information</h3>
+                <p></p>
+                <h3>Additional Information</h3>
+                <p></p>
+                <form  class="d-inline" action="{{ url('/buyerstatus/'.$dataproduk->id) }}" method="post">
+                    @csrf  
+                    <button type="submit" class="btn btn-success">PESAN SEKARANG</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <
 
 
 
@@ -62,5 +71,5 @@ img {
                 </div>
             </div>
         </div>
-     --}}
+    --}}
 @endsection

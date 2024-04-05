@@ -33,6 +33,13 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if (Auth::user()->hasRole('seller')) {
+            return redirect()->intended(route('vieweditproduk'));
+        };
+        if (Auth::user()->hasRole('buyer')) {
+            return redirect()->intended(route('viewproduk'));
+        };
+        
         return redirect()->intended(route('dashboard', absolute: false));
     }
 

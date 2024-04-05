@@ -14,8 +14,9 @@
       <div class="d-flex">
         <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="tokoedit">
           <img
-            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-            height="20"
+            src="img/logo.png"
+            height="40"
+            class="rounded"
             alt="MDB Logo"
             loading="lazy"
             style="margin-top: 2px;"
@@ -55,22 +56,31 @@
           </div>
       
         
+        @if (Auth::user()->hasRole('seller'))
         <li class="nav-item me-3 me-lg-1">
-          <a class="nav-link d-flex justify-content-center align-items-center" href="#">
-        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link d-flex justify-content-center align-items-center" href="/editproduk">
             <span><i class="fa-solid fa-house"></i></span>
           </a>
         </li>
         <li class="nav-item me-3 me-lg-1">
-          <a class="nav-link d-flex justify-content-center align-items-center" href="/chatify">
-            <span><i class="bi bi-chat"></i></span>
-          </a>
-        </li>
-        <li class="nav-item me-3 me-lg-1">
-          <a class="nav-link d-flex justify-content-center align-items-center" href="#">
+          <a class="nav-link d-flex justify-content-center align-items-center" href="/riwayatpesananseller">
             <span><i class="fa-solid fa-clock-rotate-left"></i></span>
           </a>
         </li>
+        @endif
+        @if (Auth::user()->hasRole('buyer'))
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link d-flex justify-content-center align-items-center" href="/viewproduk">
+            <span><i class="fa-solid fa-house"></i></span>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link d-flex justify-content-center align-items-center" href="/riwayatpesananbuyer">
+            <span><i class="fa-solid fa-clock-rotate-left"></i></span>
+          </a>
+        </li>
+        @endif
+        
             <div>
                 <form method ="POST" action="/logout">
                     @csrf
